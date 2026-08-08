@@ -1,11 +1,6 @@
 import streamlit as st
 import requests
-import os
-from dotenv import load_dotenv
 
-load_dotenv()
-
-BACKEND_URL = os.getenv("BACKEND_URL")
 
 st.title("🤖 AI Chatbot")
 
@@ -14,7 +9,7 @@ user_input = st.text_input("Ask Anything")
 if st.button("Send"):
 
     response = requests.post(
-        f"{BACKEND_URL}/chat",
+        "https://ai-chatbot-a40l.onrender.com/chat",
         json={"message": user_input}
     )
 
