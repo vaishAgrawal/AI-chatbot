@@ -14,7 +14,7 @@ user_input = st.text_input("Ask Anything")
 if st.button("Send"):
 
     response = requests.post(
-        f"{BACKEND_URL}",
+        f"{BACKEND_URL}/chat",
         json={"message": user_input}
     )
 

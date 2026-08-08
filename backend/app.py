@@ -4,6 +4,7 @@ from chatbot import get_response
 
 app = FastAPI()
 
+
 class ChatRequest(BaseModel):
     message: str
 
