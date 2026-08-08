@@ -18,4 +18,9 @@ if st.button("Send"):
         json={"message": user_input}
     )
 
-    st.write(response.json()["response"])
+    if response.status_code == 200:
+            data = response.json()
+            st.write(data["response"])
+    else:
+            st.error(f"Backend Error: {response.status_code}")
+            st.write(response.text)
